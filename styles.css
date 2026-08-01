@@ -2580,3 +2580,358 @@ a {
     flex: 0 0 90%; /* Displays ~1.05 cards at once */
   }
 }
+
+/* ==========================================================================
+   RESPONSIVE OPTIMIZATION FOR MOBILE AND TABLET
+   ========================================================================== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+.site-container {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
+/* Tablet landscape / Small Desktop (max-width: 1279px) */
+@media (max-width: 1279px) {
+  .site-container {
+    width: min(100% - 3rem, 1100px);
+  }
+}
+
+/* Tablet portrait (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .site-container {
+    width: min(100% - 3rem, 960px);
+  }
+  
+  /* StoryBrand Challenge section (O Desafio) in 3 columns for tablet */
+  .story-cards-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+  
+  /* Modalidades de Elite: 2 columns, last card centered at 50% */
+  .programmes-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  .programme-card:last-child {
+    grid-column: 1 / -1 !important;
+    max-width: 50% !important;
+    margin-inline: auto !important;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  :root {
+      --header-height: 72px;
+  }
+
+  .site-container {
+    width: calc(100% - 2rem);
+  }
+  
+  /* Mobile Header Touch Targets and Menu toggle */
+  .main-nav,
+  .nav-cta {
+    display: none !important;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .mobile-menu-toggle .hamburger {
+    position: relative !important;
+    top: 0 !important;
+  }
+  
+  .mobile-menu-toggle .hamburger::before {
+    top: -8px !important;
+  }
+  
+  .mobile-menu-toggle .hamburger::after {
+    top: 8px !important;
+  }
+  
+  .mobile-menu-toggle.open .hamburger::before {
+    transform: rotate(45deg) !important;
+    top: 0 !important;
+  }
+  .mobile-menu-toggle.open .hamburger::after {
+    transform: rotate(-45deg) !important;
+    top: 0 !important;
+  }
+  
+  .header-container {
+    height: 72px !important;
+    padding-inline: 1rem !important;
+  }
+  
+  /* Hero Mobile Fix - Fill entire viewport */
+  .hero-section {
+    min-height: calc(100svh - 72px) !important;
+    padding: 5rem 1.5rem 3rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: auto !important;
+  }
+  
+  .hero-video-wrapper,
+  .hero-background-video {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .hero-content {
+    width: 100% !important;
+    max-width: 420px !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+    transform: none !important;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.3rem, 11vw, 4rem) !important;
+    line-height: 0.95 !important;
+  }
+  
+  .hero-subtitle {
+    max-width: 34ch !important;
+    margin-inline: auto !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  .hero-ctas {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+    max-width: none !important;
+  }
+  
+  .hero-ctas .btn {
+    width: 100% !important;
+    min-height: 54px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* StoryBrand 'O Desafio' Mobile */
+  .story-cards-row {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .story-card {
+    width: 100% !important;
+    padding: 30px 20px !important;
+  }
+  
+  /* Modalidades de Elite Mobile */
+  .programmes-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  
+  .programme-card {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  .programme-card:last-child {
+    max-width: none !important;
+  }
+  
+  .programme-image-wrapper {
+    aspect-ratio: 16 / 10 !important;
+  }
+  
+  .programme-info {
+    padding: 1.5rem !important;
+  }
+  
+  /* Disciplina em Ação Mobile Carousel */
+  .vertical-reels-track,
+  .horizontal-reels-track {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 1rem !important;
+    padding-bottom: 1.5rem !important;
+    scrollbar-width: none;
+  }
+  
+  .vertical-reels-track::-webkit-scrollbar,
+  .horizontal-reels-track::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  .vertical-reels-track .vertical-reel-card {
+    flex: 0 0 min(78vw, 300px) !important;
+    aspect-ratio: 9 / 16 !important;
+    scroll-snap-align: start !important;
+  }
+  
+  .horizontal-reels-track .horizontal-reel-card {
+    flex: 0 0 min(88vw, 420px) !important;
+    aspect-ratio: 16 / 9 !important;
+    scroll-snap-align: start !important;
+  }
+  
+  /* Liderança Section Mobile */
+  .founder-wrapper {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 2.5rem !important;
+  }
+  
+  .founder-portrait-container {
+    width: min(78vw, 360px) !important;
+    margin-inline: auto !important;
+  }
+  
+  .founder-bio {
+    max-width: 36rem !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+  
+  /* Pricing Cards Mobile */
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    max-width: 420px !important;
+    margin-inline: auto !important;
+  }
+  
+  /* FAQ / Termos e Informações Mobile */
+  .faq-layout {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .faq-image-container {
+    width: 100% !important;
+    max-width: 420px !important;
+    margin-inline: auto !important;
+    aspect-ratio: 4 / 5 !important;
+  }
+  
+  .faq-accordion {
+    width: 100% !important;
+  }
+  
+  /* Prova Social Mobile Masonry/Columns */
+  .social-proof-gallery {
+    display: block !important;
+    columns: 2 !important;
+    column-gap: 0.75rem !important;
+    max-width: none !important;
+  }
+  
+  .gallery-item {
+    display: inline-block !important;
+    width: 100% !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  /* Espírito de Equipa Mobile Collage */
+  .community-collage {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+  
+  .collage-item.hero-item {
+    grid-column: 1 / -1 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+  
+  /* Location Maps Mobile */
+  .location-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  
+  .map-frame-wrapper {
+    width: 100% !important;
+    height: 320px !important;
+  }
+  
+  /* Footer Mobile */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .footer-brand {
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
+  }
+  
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* Small mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .site-container {
+    width: calc(100% - 1.5rem);
+  }
+  
+  /* Prova Social Single Column */
+  .social-proof-gallery {
+    columns: 1 !important;
+  }
+  
+  /* Footer Single Column */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+}
+
+/* Fluid Typography and Spacing */
+.section-title {
+  font-size: clamp(2.2rem, 7vw, 5rem);
+  line-height: 0.98;
+}
+
+.section-tag {
+  font-size: clamp(0.72rem, 2vw, 0.9rem);
+}
+
+.lead-text, .founder-paragraph, .community-desc, .story-card-body {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 1.65;
+}

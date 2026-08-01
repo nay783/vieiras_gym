@@ -1214,11 +1214,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('error', () => {
-            img.src = 'LOGO/logo.png';
-        });
-    });
+    // Global Media Error Handling - Cleanly remove broken media items
+    window.addEventListener('error', (e) => {
+        if (e.target && e.target.tagName === 'IMG') {
+            const img = e.target;
+            console.error("Failed media:", img.src);
+            const wrapper = img.closest('.gallery-item') || img.closest('.collage-item') || img.closest('.programme-card') || img.closest('.founder-portrait-container') || img.closest('[data-media-item]');
+            if (wrapper) {
+                wrapper.remove();
+            } else {
+                img.style.display = 'none';
+            }
+        }
+    }, true);
 
     /* ==========================================================================
        PROVA SOCIAL GALLERY & SHARED LIGHTBOX
