@@ -1,0 +1,20 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+
+# Local server log/temp files
+*.log
+.temp/
+.temp-media/
+
+# Premiere Pro (global exclusions)
+**/Adobe Premiere Pro Auto-Save/
+**/Adobe Premiere Pro Audio Previews/
+**/*.prproj
+**/*.prin
+**/*.prtl

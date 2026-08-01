@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vieira's Gym — Centro de Treinos de Artes Marciais e Fitness em Maputo</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Centro de treinos premium em Maputo especializado em Kickboxing, Taekwondo, Boxe, Treino Funcional, Calistenia e Musculação. Desenvolva força física e mental com acompanhamento profissional.">
+    <meta name="keywords" content="Vieiras Gym, Gym Maputo, Academia Maputo, Kickboxing Maputo, Taekwondo Maputo, Treino Funcional Maputo, Calistenia Moçambique, Fitness Maputo, Eduardo Delfim Vieira">
+    <meta name="author" content="Vieira's Gym">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.facebook.com/vieirasgym/">
+    <meta property="og:title" content="Vieira's Gym — Força Física e Resiliência Mental">
+    <meta property="og:description" content="Artes marciais, preparação atlética e calistenia no coração de Maputo. Comece hoje a sua jornada com acompanhamento profissional.">
+    
+    <!-- Favicon / Logo Link -->
+    <link rel="icon" type="image/png" href="LOGO/logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Transparent Fixed Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="logo-area">
+                <img src="LOGO/logo.png" alt="Vieira's Gym Logo" class="nav-logo">
+                <span class="brand-name">VIEIRA'S GYM</span>
+            </a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#problem" data-i18n="nav_about">Sobre</a></li>
+                    <li><a href="#programmes" data-i18n="nav_programmes">Modalidades</a></li>
+                    <li><a href="#timetable-section" data-i18n="nav_timetable">Horários</a></li>
+                    <li><a href="#memberships" data-i18n="nav_pricing">Preços</a></li>
+                    <li><a href="#location" data-i18n="nav_contact">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <!-- Language Switcher Switch -->
+                <div class="lang-switcher">
+                    <button id="btn-lang-pt" class="lang-btn active">PT</button>
+                    <span class="lang-separator">|</span>
+                    <button id="btn-lang-en" class="lang-btn">EN</button>
+                </div>
+                
+                <a href="https://wa.me/258828436590" class="btn btn-primary nav-cta" target="_blank" data-i18n="btn_trial">Aula Experimental</a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#problem" data-i18n="nav_about">Sobre</a></li>
+                <li><a href="#programmes" data-i18n="nav_programmes">Modalidades</a></li>
+                <li><a href="#timetable-section" data-i18n="nav_timetable">Horários</a></li>
+                <li><a href="#memberships" data-i18n="nav_pricing">Preços</a></li>
+                <li><a href="#location" data-i18n="nav_contact">Contacto</a></li>
+            </ul>
+            <div class="mobile-nav-footer">
+                <a href="https://wa.me/258828436590" class="btn btn-primary" target="_blank" data-i18n="btn_trial">Aula Experimental</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="hero-section">
+        <div class="hero-video-wrapper">
+            <video
+              class="hero-background-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              aria-hidden="true"
+            >
+              <source src="/reels/hero-section-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content container">
+            <h1 class="hero-title" data-i18n="hero_title">FORÇA FÍSICA E RESILIÊNCIA MENTAL</h1>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">Treino disciplinado e acompanhamento profissional no centro de treinos de artes marciais referência em Maputo.</p>
+            <div class="hero-ctas">
+                <a href="https://wa.me/258828436590" class="btn btn-primary btn-large" target="_blank" data-i18n="btn_hero_primary">Marcar Aula Experimental</a>
+                <a href="#timetable-section" class="btn btn-secondary btn-large" data-i18n="btn_hero_secondary">Ver Horários</a>
+            </div>
+        </div>
+        
+        <div class="hero-scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. VISITOR PROBLEM SECTION -->
+    <section id="problem" class="problem-section section-padding">
+        <div class="container problem-inner">
+            <div class="problem-header text-center">
+                <span class="section-tag" data-i18n="problem_tag">O Desafio</span>
+                <h2 class="editorial-heading" data-i18n="problem_title">O OBSTÁCULO ESTÁ NA MENTE.</h2>
+            </div>
+            
+            <div class="problem-story text-center">
+                <p class="lead-text" data-i18n="problem_body">Falta de consistência, rotinas genéricas e a ausência de uma verdadeira orientação profissional impedem-no de atingir o seu potencial. No Vieira's Gym, não vendemos apenas mensalidades. Oferecemos um caminho de disciplina, suor e superação. Aqui, o corpo segue a mente.</p>
+            </div>
+            
+            <div class="problem-video-container">
+                <video src="/reels/vieira1.mp4" autoplay muted loop playsinline preload="metadata" class="problem-video-element"></video>
+            </div>
+            
+            <div class="story-cards-row">
+                <article class="story-card">
+                    <span class="story-card-num">01</span>
+                    <h4 class="story-card-heading" data-i18n="step_1_title">O Problema</h4>
+                    <p class="story-card-body" data-i18n="step_1_desc">Acomodação, treinos sem rumo e falta de motivação travam a sua evolução física.</p>
+                </article>
+                <article class="story-card">
+                    <span class="story-card-num">02</span>
+                    <h4 class="story-card-heading" data-i18n="step_2_title">O Guia</h4>
+                    <p class="story-card-body" data-i18n="step_2_desc">No Vieira's Gym, encontra o plano, a estrutura e a liderança de treinadores experientes.</p>
+                </article>
+                <article class="story-card">
+                    <span class="story-card-num">03</span>
+                    <h4 class="story-card-heading" data-i18n="step_3_title">A Transformação</h4>
+                    <p class="story-card-body" data-i18n="step_3_desc">Resultados reais: um corpo mais forte, hábitos consolidados e mentalidade inabalável.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PROGRAMMES SECTION -->
+    <section id="programmes" class="programmes-section section-padding">
+        <div class="container">
+            <span class="section-tag" data-i18n="programmes_tag">Modalidades de Elite</span>
+            <h2 class="section-title text-left" data-i18n="programmes_title">ESCOLHA O SEU CAMINHO.</h2>
+            
+            <div class="programmes-grid">
+                <!-- Martial Arts Card -->
+                <div class="programme-card">
+                    <div class="programme-image-wrapper">
+                        <img src="/posts/kb/artes_marciais.jpg" alt="Martial Arts sparring" class="programme-img" loading="lazy">
+                        <div class="programme-overlay"></div>
+                    </div>
+                    <div class="programme-info">
+                        <h3 class="programme-card-title" data-i18n="prog_martial_arts">Artes Marciais</h3>
+                        <p class="programme-card-desc" data-i18n="prog_martial_arts_desc">Kickboxing, Taekwondo e Boxe. Foco na precisão técnica, autodefesa, flexibilidade e preparação competitiva. Treine sob a linhagem de campeões.</p>
+                        <a href="https://wa.me/258828436590" class="programme-link" target="_blank">
+                            <span data-i18n="prog_cta">Quero treinar</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Strength Card -->
+                <div class="programme-card">
+                    <div class="programme-image-wrapper">
+                        <img src="/posts/strength-machines-workout(1).jpg" alt="Strength Weight Training" class="programme-img" loading="lazy">
+                        <div class="programme-overlay"></div>
+                    </div>
+                    <div class="programme-info">
+                        <h3 class="programme-card-title" data-i18n="prog_strength">Força & Calistenia</h3>
+                        <p class="programme-card-desc" data-i18n="prog_strength_desc">Musculação clássica e controle do peso corporal. Aumente a densidade muscular, força bruta e a mobilidade estrutural para preparar o corpo para qualquer desafio.</p>
+                        <a href="https://wa.me/258828436590" class="programme-link" target="_blank">
+                            <span data-i18n="prog_cta">Quero treinar</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Performance Card -->
+                <div class="programme-card">
+                    <div class="programme-image-wrapper">
+                        <img src="/posts/functional-group-workout.jpg" alt="Performance Functional Training" class="programme-img" loading="lazy">
+                        <div class="programme-overlay"></div>
+                    </div>
+                    <div class="programme-info">
+                        <h3 class="programme-card-title" data-i18n="prog_performance">Treino Funcional</h3>
+                        <p class="programme-card-desc" data-i18n="prog_performance_desc">Exercícios baseados nos movimentos primordiais (agachar, empurrar, puxar, saltar). Melhore o condicionamento cardiovascular, a queima de gordura e a agilidade atlética.</p>
+                        <a href="https://wa.me/258828436590" class="programme-link" target="_blank">
+                            <span data-i18n="prog_cta">Quero treinar</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. INTERACTIVE TIMETABLE SECTION -->
+    <section id="timetable-section" class="timetable-section section-padding">
+        <div class="container">
+            <span class="section-tag" data-i18n="timetable_tag">Agenda de Treinos</span>
+            <h2 class="section-title text-left" data-i18n="timetable_title">HORÁRIOS DAS AULAS</h2>
+            
+            <!-- Filters -->
+            <div class="timetable-filters">
+                <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Ver Todos</button>
+                <button class="filter-btn" data-filter="kickboxing" data-i18n="filter_kickboxing">Kickboxing</button>
+                <button class="filter-btn" data-filter="taekwondo" data-i18n="filter_taekwondo">Taekwondo</button>
+                <button class="filter-btn" data-filter="boxing" data-i18n="filter_boxing">Boxe</button>
+                <button class="filter-btn" data-filter="strength" data-i18n="filter_musculacao">Musculação</button>
+                <button class="filter-btn" data-filter="calisthenics" data-i18n="filter_calistenia">Calistenia</button>
+                <button class="filter-btn" data-filter="functional" data-i18n="filter_funcional">Treino Funcional</button>
+                <button class="filter-btn" data-filter="self-defence" data-i18n="filter_defesa">Defesa Pessoal</button>
+            </div>
+            
+            <!-- Timetable Desktop Grid -->
+            <div class="timetable-desktop">
+                <div class="timetable-grid">
+                    <!-- Table Headers -->
+                    <div class="grid-header time-col" data-i18n="th_time">Horário</div>
+                    <div class="grid-header" data-i18n="th_mon">2ª Feira</div>
+                    <div class="grid-header" data-i18n="th_tue">3ª Feira</div>
+                    <div class="grid-header" data-i18n="th_wed">4ª Feira</div>
+                    <div class="grid-header" data-i18n="th_thu">5ª Feira</div>
+                    <div class="grid-header" data-i18n="th_fri">6ª Feira</div>
+                    <div class="grid-header" data-i18n="th_sat">Sábado</div>
+
+                    <!-- Dynamically generated via JS -->
+                </div>
+            </div>
+            
+            <!-- Timetable Mobile View (Populated dynamically via JS chronologically based on filter) -->
+            <div class="timetable-mobile">
+                <div id="mobile-timetable-list" class="mobile-timetable-list">
+                    <!-- Injected via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DISCIPLINA EM AÇÃO (REELS GALLERY) -->
+    <section class="gallery-section section-padding-bottom">
+        <div class="container-fluid">
+            <div class="container">
+                <span class="section-tag" data-i18n="gallery_tag">Foco & Consistência</span>
+                <h2 class="section-title text-left" data-i18n="gallery_title">DISCIPLINA EM AÇÃO</h2>
+            </div>
+            
+            <!-- Vertical Reels Carousel -->
+            <div class="media-carousel-shell">
+                <button type="button" class="carousel-arrow carousel-arrow-left prev-v" aria-label="Ver reels anteriores">←</button>
+                <div id="vertical-reels-track" class="vertical-reels-track drag-container">
+                    <!-- Loaded dynamically via app.js -->
+                </div>
+                <button type="button" class="carousel-arrow carousel-arrow-right next-v" aria-label="Ver mais reels">→</button>
+            </div>
+
+            <!-- Horizontal Reels Carousel -->
+            <div class="media-carousel-shell" style="margin-top: 3rem;">
+                <button type="button" class="carousel-arrow carousel-arrow-left prev-h" aria-label="Ver vídeos anteriores">←</button>
+                <div id="horizontal-reels-track" class="horizontal-reels-track drag-container">
+                    <!-- Loaded dynamically via app.js -->
+                </div>
+                <button type="button" class="carousel-arrow carousel-arrow-right next-h" aria-label="Ver mais vídeos">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOUNDER SECTION -->
+    <section id="founder" class="founder-section section-padding">
+        <div class="container">
+            <span class="section-tag" data-i18n="founder_tag">Liderança</span>
+            
+            <div class="founder-wrapper">
+                <div class="founder-portrait-container">
+                    <img src="/images/eduardo_vieira_1.jpg" alt="Eduardo Delfim Vieira, Founder and Technical Director of Vieira's Gym" class="founder-portrait" loading="lazy">
+                </div>
+                
+                <h2 class="founder-name">Eduardo Delfim Vieira</h2>
+                <h3 class="founder-role" data-i18n="founder_title">Fundador & Diretor Técnico</h3>
+                <span class="founder-credential" data-i18n="founder_credential">Fundador da WAKO-Moçambique</span>
+                
+                <div class="founder-bio">
+                    <p class="founder-paragraph" data-i18n="founder_bio_p1">Eduardo Delfim Vieira é uma das figuras mais respeitadas no cenário das artes marciais em Moçambique. Como fundador e principal impulsionador da WAKO-Moçambique (Associação Mundial de Organizações de Kickboxing), tem dedicado a sua vida à formação técnica, desenvolvimento desportivo de atletas de competição e consolidação da disciplina desportiva.</p>
+                    <p class="founder-paragraph" data-i18n="founder_bio_p2">No Vieira's Gym, Eduardo canaliza décadas de experiência acumulada no tatame para criar um ambiente onde cada treino é guiado por consistência técnica e superação mental. A sua missão ultrapassa a preparação física: formar indivíduos resilientes, autoconfiantes e preparados para vencer dentro e fora do ginásio.</p>
+                </div>
+            </div>
+            
+            <!-- Founder scrolling reels gallery -->
+            <div class="founder-action-inner">
+                <div class="founder-reels-title-area">
+                    <h4 data-i18n="founder_gallery_title">O FUNDADOR EM AÇÃO</h4>
+                </div>
+                <div class="founder-carousel-shell">
+                    <button type="button" class="founder-arrow founder-arrow-left" aria-label="Ver reels anteriores do fundador">←</button>
+                    <div id="founder-reels-track" class="founder-reels-track drag-container founder-track">
+                        <!-- Video: vieira -->
+                        <article class="founder-reel-card">
+                            <video src="/reels/vieira.mp4" autoplay muted loop playsinline preload="metadata" class="lazy-video"></video>
+                            <div class="reel-overlay"></div>
+                        </article>
+                        <article class="founder-reel-card">
+                            <video src="/reels/vieira1.mp4" autoplay muted loop playsinline preload="metadata" class="lazy-video"></video>
+                            <div class="reel-overlay"></div>
+                        </article>
+                        <article class="founder-reel-card">
+                            <video src="/reels/vieira2.mp4" autoplay muted loop playsinline preload="metadata" class="lazy-video"></video>
+                            <div class="reel-overlay"></div>
+                        </article>
+                        <article class="founder-reel-card">
+                            <video src="/reels/vieira3.mp4" autoplay muted loop playsinline preload="metadata" class="lazy-video"></video>
+                            <div class="reel-overlay"></div>
+                        </article>
+                        <article class="founder-reel-card">
+                            <video src="/reels/vieira4.mp4" autoplay muted loop playsinline preload="metadata" class="lazy-video"></video>
+                            <div class="reel-overlay"></div>
+                        </article>
+                    </div>
+                    <button type="button" class="founder-arrow founder-arrow-right" aria-label="Ver mais reels do fundador">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SOCIAL PROOF SECTION -->
+    <section id="social-proof" class="social-proof-section section-padding">
+        <div class="container">
+            <span class="section-tag" data-i18n="proof_tag">Prova Social</span>
+            <h2 class="section-title text-left" data-i18n="proof_title">QUEM TREINA CONNOSCO</h2>
+            
+            <div id="social-proof-gallery" class="social-proof-gallery">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. MEMBERSHIPS & FAQ SECTION -->
+    <section id="memberships" class="memberships-section section-padding">
+        <div class="container">
+            <span class="section-tag" data-i18n="pricing_tag">Subscrições</span>
+            <h2 class="section-title text-left" data-i18n="pricing_title">MENSALIDADES POR PACOTES</h2>
+            
+            <div class="pricing-grid">
+                <!-- Package Básico -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3 class="pricing-name" data-i18n="price_basic">Básico</h3>
+                        <div class="pricing-value">2.500<span class="currency">MT</span><span class="period">/mês</span></div>
+                    </div>
+                    <div class="card-features">
+                        <ul>
+                            <li data-i18n="basic_f1">1 Modalidade Fixa</li>
+                            <li data-i18n="basic_f2">1 Horário Disponível</li>
+                            <li data-i18n="basic_f3">Aulas de Grupo ou Musculação</li>
+                            <li data-i18n="basic_f4">Acesso a Salas de Treino</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://wa.me/258828436590" class="btn btn-secondary full-width" target="_blank" data-i18n="btn_choose">Aderir ao Plano</a>
+                    </div>
+                </div>
+
+                <!-- Package Prime (Recommended) -->
+                <div class="pricing-card recommended">
+                    <div class="recommended-badge" data-i18n="badge_recommended">Recomendado</div>
+                    <div class="card-header">
+                        <h3 class="pricing-name" data-i18n="price_prime">Prime</h3>
+                        <div class="pricing-value">4.000<span class="currency">MT</span><span class="period">/mês</span></div>
+                    </div>
+                    <div class="card-features">
+                        <ul>
+                            <li class="bold-feature" data-i18n="prime_f1">Todas as Modalidades Incluídas</li>
+                            <li class="bold-feature" data-i18n="prime_f2">Todos os Horários Disponíveis</li>
+                            <li data-i18n="prime_f3">Kickboxing, Taekwondo, Boxe</li>
+                            <li data-i18n="prime_f4">Musculação e Treino Funcional</li>
+                            <li data-i18n="prime_f5">Acesso Sem Limites a Todas as Salas</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://wa.me/258828436590" class="btn btn-primary full-width" target="_blank" data-i18n="btn_choose">Aderir ao Plano</a>
+                    </div>
+                </div>
+
+                <!-- Package Especial -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3 class="pricing-name" data-i18n="price_special">Especial</h3>
+                        <div class="pricing-value">3.000<span class="currency">MT</span><span class="period">/mês</span></div>
+                    </div>
+                    <div class="card-features">
+                        <ul>
+                            <li data-i18n="special_f1">2 Modalidades à Escolha</li>
+                            <li data-i18n="special_f2">2 Horários Flexíveis</li>
+                            <li data-i18n="special_f3">Artes Marciais + Musculação/Funcional</li>
+                            <li data-i18n="special_f4">Acesso às Salas de Treino Associadas</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://wa.me/258828436590" class="btn btn-secondary full-width" target="_blank" data-i18n="btn_choose">Aderir ao Plano</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Expandable Information Sections (Accordion) -->
+            <div class="accordion-section-title">
+                <h3 data-i18n="accordion_title">TERMOS E INFORMAÇÕES DETALHADAS</h3>
+            </div>
+            <div class="faq-layout align-start">
+                <div class="accordion-visual">
+                    <img src="/posts/outdoor-pullup-exercise.jpg" alt="Atleta a treinar calistenia na barra" class="accordion-img-supporting" loading="lazy">
+                    <div class="accordion-visual-overlay"></div>
+                    <div class="accordion-visual-text" data-i18n="price_visual_text">FORÇA REAL. RESULTADOS REAIS.</div>
+                </div>
+                <div class="faq-column" id="faq-accordion">
+                    <!-- Populated dynamically via app.js -->
+                </div>
+            </div> <!-- End faq-layout -->
+        </div>
+    </section>
+
+    <!-- 9. COMMUNITY SECTION -->
+    <section id="community" class="community-section section-padding-bottom">
+        <div class="community-split">
+            <div class="community-media">
+                <div class="community-collage">
+                    <div class="collage-item hero-item" data-index="0">
+                        <img src="/posts/kb/IMG-20260218-WA0018.jpg" alt="Treino de grupo no tatame" loading="lazy">
+                    </div>
+                    <div class="collage-subgrid">
+                        <div class="collage-item" data-index="1">
+                            <img src="/posts/kb/IMG-20260330-WA0011.jpg" alt="Treinamento e consistência" loading="lazy">
+                        </div>
+                        <div class="collage-item" data-index="2">
+                            <img src="/posts/kb/IMG-20260413-WA0004.jpg" alt="Graduação e superação" loading="lazy">
+                        </div>
+                        <div class="collage-item" data-index="3">
+                            <img src="/posts/kb/IMG-20260414-WA0002.jpg" alt="Equipa Vieira's Gym no tatame" loading="lazy">
+                        </div>
+                        <div class="collage-item" data-index="4">
+                            <img src="/posts/kb/IMG-20260624-WA0007.jpg" alt="União e foco colectivo" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="community-text-panel">
+                <span class="section-tag-light" data-i18n="community_tag">Espírito de Equipa</span>
+                <h2 class="community-heading" data-i18n="community_title">CRESCEMOS JUNTOS</h2>
+                <p class="community-desc" data-i18n="community_body">No Vieira's Gym, a força reside na união. Não treinamos para competir uns com os outros, mas para elevar o espírito de todos. Aqui, o ego fica à porta. Apoiamos-nos mutuamente em cada soco, em cada agachamento, em cada exame de graduação e em cada treino finalizado. Esta não é apenas uma academia. É a sua comunidade.</p>
+                <a href="https://wa.me/258828436590" class="btn btn-primary" target="_blank" data-i18n="btn_join_community">Fazer parte da Família</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. LOCATION & INFORMATION SECTION -->
+    <section id="location" class="location-section section-padding">
+        <div class="container text-center location-header-area">
+            <span class="section-tag" data-i18n="location_tag">Localização</span>
+            <h2 class="section-title" data-i18n="location_title">ONDE NOS ENCONTRAR</h2>
+        </div>
+        <div class="container grid-two-cols location-grid">
+            <!-- Branch 1: Maputo -->
+            <div class="map-card-new">
+                <div class="map-frame-wrapper">
+                    <iframe
+                        title="Vieira's Gym — Maputo"
+                        src="https://www.google.com/maps?q=-25.9573143,32.5834931&z=17&output=embed"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="map-frame"
+                    ></iframe>
+                </div>
+                <div class="map-card-info">
+                    <h3 class="map-branch-name">Vieira's Gym — Maputo</h3>
+                    <p class="map-card-address">
+                        <strong data-i18n="loc_address_title">Endereço</strong>:<br>
+                        Rua Tomas Ribeiro Nº 97, Bairro Coop, Maputo, Moçambique
+                    </p>
+                    <p class="map-card-hours">
+                        <strong data-i18n="loc_hours_title">Horário de Funcionamento</strong>:<br>
+                        <span data-i18n="loc_hours_week">Segunda a Sexta: 05:30 – 20:00</span><br>
+                        <span data-i18n="loc_hours_sat">Sábado: 05:30 – 12:00</span>
+                    </p>
+                    <div class="map-card-actions">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=-25.9573143,32.5834931" class="btn btn-secondary btn-small" target="_blank" data-i18n="btn_directions">Direções</a>
+                        <a href="https://wa.me/258828436590" class="btn btn-primary btn-small" target="_blank" data-i18n="btn_talk">Falar Connosco</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Branch 2: Matola -->
+            <div class="map-card-new">
+                <div class="map-frame-wrapper">
+                    <iframe
+                        title="Vieira's Gym — Tsalala, Matola"
+                        src="https://www.google.com/maps?q=-25.9293407,32.4535015&z=12&output=embed"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="map-frame"
+                    ></iframe>
+                </div>
+                <div class="map-card-info">
+                    <h3 class="map-branch-name">Vieira's Gym — Tsalala, Matola</h3>
+                    <p class="map-card-address">
+                        <strong data-i18n="loc_address_title">Endereço</strong>:<br>
+                        Tsalala, Matola, Moçambique
+                    </p>
+                    <p class="map-card-hours">
+                        <strong data-i18n="loc_hours_title">Horário de Funcionamento</strong>:<br>
+                        <span data-i18n="loc_hours_week">Segunda a Sexta: 05:30 – 20:00</span><br>
+                        <span data-i18n="loc_hours_sat">Sábado: 05:30 – 12:00</span>
+                    </p>
+                    <div class="map-card-actions">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=-25.9293407,32.4535015" class="btn btn-secondary btn-small" target="_blank" data-i18n="btn_directions">Direções</a>
+                        <a href="https://wa.me/258828436590" class="btn btn-primary btn-small" target="_blank" data-i18n="btn_talk">Falar Connosco</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- General direct contact links (Email and contacts) -->
+        <div class="container location-contacts-bottom text-center">
+            <p>WhatsApp: <a href="https://wa.me/258828436590" target="_blank" class="contact-link">+258 82 843 6590 / +258 84 520 3047</a> | Email: <a href="mailto:vieirasgym2012@gmail.com" class="contact-link">vieirasgym2012@gmail.com</a></p>
+        </div>
+    </section>
+
+    <!-- 11. FINAL CALL TO ACTION SECTION -->
+    <section class="final-cta-section section-padding-large">
+        <div class="cta-overlay-bg"></div>
+        <div class="container text-center cta-content-wrapper">
+            <h2 class="final-cta-title" data-i18n="final_cta_title">COMECE A MUDAR HOJE</h2>
+            <p class="final-cta-subtitle" data-i18n="final_cta_subtitle">Diga não às desculpas inventadas pela sua mente. Junte-se a nós e treine com acompanhamento profissional.</p>
+            <a href="https://wa.me/258828436590" class="btn btn-primary btn-large" target="_blank" data-i18n="btn_final_cta">COMEÇAR AGORA</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-area">
+                    <img src="LOGO/logo.png" alt="Vieira's Gym Logo" class="footer-logo">
+                    <p class="footer-slogan" data-i18n="footer_slogan">Displicina cria campeões. Sucesso é o resultado de pequenos esforços diários.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer_menu_title">Menu</h4>
+                    <ul>
+                        <li><a href="#problem" data-i18n="nav_about">Sobre</a></li>
+                        <li><a href="#programmes" data-i18n="nav_programmes">Modalidades</a></li>
+                        <li><a href="#timetable-section" data-i18n="nav_timetable">Horários</a></li>
+                        <li><a href="#memberships" data-i18n="nav_pricing">Preços</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4 data-i18n="footer_social_title">Redes Sociais</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/vieirasgym/" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/vieiras_gym/" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Vieira's Gym. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
+                <p class="footer-dev-credit">Designed & Developed by NCAI Consultorias e Serviços, EI</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Fullscreen Lightbox -->
+    <div id="gallery-lightbox" class="lightbox-modal" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Fechar visualização">&times;</button>
+        <button class="lightbox-arrow lightbox-arrow-left" aria-label="Imagem anterior">&#10094;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Visualização em tamanho real">
+        </div>
+        <button class="lightbox-arrow lightbox-arrow-right" aria-label="Próxima imagem">&#10095;</button>
+    </div>
+
+    <!-- App Script -->
+    <script src="pricingFaqs.js?v=1.2"></script>
+    <script src="app.js?v=1.2"></script>
+</body>
+</html>
