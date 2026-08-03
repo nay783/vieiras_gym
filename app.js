@@ -676,15 +676,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && mobileOverlay) {
         menuToggle.addEventListener('click', () => {
             const isOpen = menuToggle.classList.contains('open');
-            menuToggle.classList.toggle('open', !isOpen);
-            mobileOverlay.classList.toggle('open', !isOpen);
-            document.body.style.overflow = !isOpen ? 'hidden' : '';
+            const targetState = !isOpen;
+            menuToggle.classList.toggle('open', targetState);
+            mobileOverlay.classList.toggle('open', targetState);
+            menuToggle.setAttribute('aria-expanded', targetState ? 'true' : 'false');
+            document.body.style.overflow = targetState ? 'hidden' : '';
         });
 
         mobileOverlay.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('open');
                 mobileOverlay.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             });
         });
@@ -1239,14 +1242,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const socialProofImages = [
         { src: '/posts/kb/img-20260218-wa0015.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260218-wa0018.webp', w: 4032, h: 3024 },
+        { src: '/posts/kb/img-20260218-wa0018.webp', w: 1600, h: 1200 },
         { src: '/posts/kb/img-20260224-wa0005.webp', w: 1280, h: 960 },
         { src: '/posts/kb/img-20260225-wa0000.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260305-wa0004.webp', w: 2972, h: 2229 },
+        { src: '/posts/kb/img-20260305-wa0004.webp', w: 1600, h: 1200 },
         { src: '/posts/kb/img-20260314-wa0045.webp', w: 1600, h: 1017 },
-        { src: '/posts/kb/img-20260330-wa0011.webp', w: 4160, h: 3120 },
-        { src: '/posts/kb/img-20260413-wa0004.webp', w: 4032, h: 3024 },
-        { src: '/posts/kb/img-20260414-wa0002.webp', w: 4032, h: 3024 },
+        { src: '/posts/kb/img-20260330-wa0011.webp', w: 1600, h: 1200 },
+        { src: '/posts/kb/img-20260413-wa0004.webp', w: 1600, h: 1200 },
+        { src: '/posts/kb/img-20260414-wa0002.webp', w: 1600, h: 1200 },
         { src: '/posts/kb/img-20260420-wa0007.webp', w: 1600, h: 1200 },
         { src: '/posts/kb/img-20260420-wa0008.webp', w: 900, h: 1600 },
         { src: '/posts/kb/img-20260427-wa0013.webp', w: 1600, h: 920 },
@@ -1255,20 +1258,20 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: '/posts/kb/img-20260520-wa0109.webp', w: 1280, h: 960 },
         { src: '/posts/kb/img-20260522-wa0000.webp', w: 1200, h: 1600 },
         { src: '/posts/kb/img-20260623-wa0002.webp', w: 960, h: 1280 },
-        { src: '/posts/kb/img-20260623-wa0006.webp', w: 3120, h: 4160 },
+        { src: '/posts/kb/img-20260623-wa0006.webp', w: 1200, h: 1600 },
         { src: '/posts/kb/img-20260624-wa0005.webp', w: 1280, h: 960 },
-        { src: '/posts/kb/img-20260624-wa0007.webp', w: 3720, h: 2790 },
+        { src: '/posts/kb/img-20260624-wa0007.webp', w: 1600, h: 1200 },
         { src: '/posts/kb/img-20260701-wa0032-2.webp', w: 1600, h: 1050 },
         { src: '/posts/kb/img-20260721-wa0007.webp', w: 1600, h: 1470 },
         { src: '/posts/kb/img-20260729-wa0001.webp', w: 940, h: 1280 }
     ];
 
     const communityCollageImages = [
-        { src: '/posts/kb/img-20260218-wa0018.webp', w: 4032, h: 3024 },
-        { src: '/posts/kb/img-20260330-wa0011.webp', w: 4160, h: 3120 },
-        { src: '/posts/kb/img-20260413-wa0004.webp', w: 4032, h: 3024 },
-        { src: '/posts/kb/img-20260414-wa0002.webp', w: 4032, h: 3024 },
-        { src: '/posts/kb/img-20260624-wa0007.webp', w: 3720, h: 2790 }
+        { src: '/posts/kb/img-20260218-wa0018.webp', w: 1600, h: 1200 },
+        { src: '/posts/kb/img-20260330-wa0011.webp', w: 1600, h: 1200 },
+        { src: '/posts/kb/img-20260413-wa0004.webp', w: 1600, h: 1200 },
+        { src: '/posts/kb/img-20260414-wa0002.webp', w: 1600, h: 1200 },
+        { src: '/posts/kb/img-20260624-wa0007.webp', w: 1600, h: 1200 }
     ];
 
     let lightboxActiveImages = [];

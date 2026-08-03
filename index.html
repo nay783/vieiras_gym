@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vieira's Gym — Centro de Treinos de Artes Marciais e Fitness em Maputo</title>
+    <title>Vieira's Gym | Artes Marciais e Fitness em Maputo</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Centro de treinos premium em Maputo especializado em Kickboxing, Taekwondo, Boxe, Treino Funcional, Calistenia e Musculação. Desenvolva força física e mental com acompanhamento profissional.">
+    <meta name="description" content="Treine kickboxing, taekwondo, boxe, musculação, calistenia e treino funcional no Vieira's Gym, em Maputo e Matola.">
     <meta name="keywords" content="Vieiras Gym, Gym Maputo, Academia Maputo, Kickboxing Maputo, Taekwondo Maputo, Treino Funcional Maputo, Calistenia Moçambique, Fitness Maputo, Eduardo Delfim Vieira">
     <meta name="author" content="Vieira's Gym">
+    <link rel="canonical" href="https://vieiras-gym-s9vp.vercel.app/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.facebook.com/vieirasgym/">
-    <meta property="og:title" content="Vieira's Gym — Força Física e Resiliência Mental">
-    <meta property="og:description" content="Artes marciais, preparação atlética e calistenia no coração de Maputo. Comece hoje a sua jornada com acompanhamento profissional.">
+    <meta property="og:url" content="https://vieiras-gym-s9vp.vercel.app/">
+    <meta property="og:title" content="Vieira's Gym | Artes Marciais e Fitness em Maputo">
+    <meta property="og:description" content="Treine kickboxing, taekwondo, boxe, musculação, calistenia e treino funcional no Vieira's Gym.">
+    <meta property="og:image" content="https://vieiras-gym-s9vp.vercel.app/logo/logo.png">
     
     <!-- Favicon / Logo Link -->
     <link rel="icon" type="image/png" href="/logo/logo.png">
@@ -32,8 +34,8 @@
     <!-- Transparent Fixed Header -->
     <header class="site-header">
         <div class="header-container">
-            <a href="#" class="logo-area">
-                <img src="/logo/logo.png" alt="Vieira's Gym Logo" class="nav-logo" width="40" height="40">
+            <a href="#" class="logo-area" aria-label="Vieira's Gym - Voltar à página inicial">
+                <img src="/logo/logo.png" alt="Logótipo do Vieira's Gym" class="nav-logo" width="40" height="40">
                 <span class="brand-name">VIEIRA'S GYM</span>
             </a>
             
@@ -50,15 +52,15 @@
             <div class="header-actions">
                 <!-- Language Switcher Switch -->
                 <div class="lang-switcher">
-                    <button id="btn-lang-pt" class="lang-btn active">PT</button>
+                    <button id="btn-lang-pt" class="lang-btn active" aria-label="Alterar idioma para Português">PT</button>
                     <span class="lang-separator">|</span>
-                    <button id="btn-lang-en" class="lang-btn">EN</button>
+                    <button id="btn-lang-en" class="lang-btn" aria-label="Change language to English">EN</button>
                 </div>
                 
-                <a href="https://wa.me/258828436590" class="btn btn-primary nav-cta" target="_blank" data-i18n="btn_trial">Aula Experimental</a>
+                <a href="https://wa.me/258828436590" class="btn btn-primary nav-cta" target="_blank" data-i18n="btn_trial" aria-label="Marcar aula experimental pelo WhatsApp">Aula Experimental</a>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false">
                     <span class="hamburger"></span>
                 </button>
             </div>
@@ -76,7 +78,7 @@
                 <li><a href="#location" data-i18n="nav_contact">Contacto</a></li>
             </ul>
             <div class="mobile-nav-footer">
-                <a href="https://wa.me/258828436590" class="btn btn-primary" target="_blank" data-i18n="btn_trial">Aula Experimental</a>
+                <a href="https://wa.me/258828436590" class="btn btn-primary" target="_blank" data-i18n="btn_trial" aria-label="Marcar aula experimental pelo WhatsApp">Aula Experimental</a>
             </div>
         </nav>
     </div>
@@ -154,13 +156,13 @@
                          <!-- Martial Arts Card -->
                 <div class="programme-card">
                     <div class="programme-image-wrapper media-frame">
-                        <img src="/posts/kb/artes-marciais.webp" alt="Martial Arts sparring" class="programme-img media-image" loading="lazy" decoding="async" width="1600" height="1050">
+                        <img src="/posts/kb/artes-marciais.webp" alt="Dois atletas a praticar kickboxing e sparring de artes marciais no tatame" class="programme-img media-image" loading="lazy" decoding="async" width="1600" height="1050">
                         <div class="programme-overlay"></div>
                     </div>
                     <div class="programme-info">
                         <h3 class="programme-card-title" data-i18n="prog_martial_arts">Artes Marciais</h3>
                         <p class="programme-card-desc" data-i18n="prog_martial_arts_desc">Kickboxing, Taekwondo e Boxe. Foco na precisão técnica, autodefesa, flexibilidade e preparação competitiva. Treine sob a linhagem de campeões.</p>
-                        <a href="https://wa.me/258828436590" class="programme-link" target="_blank">
+                        <a href="https://wa.me/258828436590" class="programme-link" target="_blank" aria-label="Quero treinar Artes Marciais - Contactar pelo WhatsApp">
                             <span data-i18n="prog_cta">Quero treinar</span>
                             <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
                         </a>
@@ -170,13 +172,13 @@
                 <!-- Strength Card -->
                 <div class="programme-card">
                     <div class="programme-image-wrapper media-frame">
-                        <img src="/posts/strength-machines-workout-1.webp" alt="Strength Weight Training" class="programme-img media-image" loading="lazy" decoding="async" width="512" height="640">
+                        <img src="/posts/strength-machines-workout-1.webp" alt="Área de musculação com pesos, halteres e equipamentos para treino de força" class="programme-img media-image" loading="lazy" decoding="async" width="512" height="640">
                         <div class="programme-overlay"></div>
                     </div>
                     <div class="programme-info">
                         <h3 class="programme-card-title" data-i18n="prog_strength">Força & Calistenia</h3>
                         <p class="programme-card-desc" data-i18n="prog_strength_desc">Musculação clássica e controle do peso corporal. Aumente a densidade muscular, força bruta e a mobilidade estrutural para preparar o corpo para qualquer desafio.</p>
-                        <a href="https://wa.me/258828436590" class="programme-link" target="_blank">
+                        <a href="https://wa.me/258828436590" class="programme-link" target="_blank" aria-label="Quero treinar Força e Calistenia - Contactar pelo WhatsApp">
                             <span data-i18n="prog_cta">Quero treinar</span>
                             <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
                         </a>
@@ -186,13 +188,13 @@
                 <!-- Performance Card -->
                 <div class="programme-card">
                     <div class="programme-image-wrapper media-frame">
-                        <img src="/posts/functional-group-workout.webp" alt="Performance Functional Training" class="programme-img media-image" loading="lazy" decoding="async" width="640" height="1136">
+                        <img src="/posts/functional-group-workout.webp" alt="Atleta a realizar treino funcional com saco de areia" class="programme-img media-image" loading="lazy" decoding="async" width="640" height="1136">
                         <div class="programme-overlay"></div>
                     </div>
                     <div class="programme-info">
                         <h3 class="programme-card-title" data-i18n="prog_performance">Treino Funcional</h3>
                         <p class="programme-card-desc" data-i18n="prog_performance_desc">Exercícios baseados nos movimentos primordiais (agachar, empurrar, puxar, saltar). Melhore o condicionamento cardiovascular, a queima de gordura e a agilidade atlética.</p>
-                        <a href="https://wa.me/258828436590" class="programme-link" target="_blank">
+                        <a href="https://wa.me/258828436590" class="programme-link" target="_blank" aria-label="Quero treinar Treino Funcional - Contactar pelo WhatsApp">
                             <span data-i18n="prog_cta">Quero treinar</span>
                             <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
                         </a>
@@ -280,7 +282,7 @@
             
             <div class="founder-wrapper">
                 <div class="founder-portrait-container media-frame">
-                    <img src="/images/eduardo-vieira-1.webp" alt="Eduardo Delfim Vieira, Founder and Technical Director of Vieira's Gym" class="founder-portrait media-image" loading="lazy" decoding="async" width="1080" height="1440">
+                    <img src="/images/eduardo-vieira-1.webp" alt="Eduardo Delfim Vieira, fundador e director técnico do Vieira's Gym" class="founder-portrait media-image" loading="lazy" decoding="async" width="1080" height="1440">
                 </div>
                 
                 <h2 class="founder-name">Eduardo Delfim Vieira</h2>
@@ -363,7 +365,7 @@
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <a href="https://wa.me/258828436590" class="btn btn-secondary full-width" target="_blank" data-i18n="btn_choose">Aderir ao Plano</a>
+                        <a href="https://wa.me/258828436590" class="btn btn-secondary full-width" target="_blank" data-i18n="btn_choose" aria-label="Aderir ao Plano Básico - Contactar pelo WhatsApp">Aderir ao Plano</a>
                     </div>
                 </div>
 
@@ -384,7 +386,7 @@
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <a href="https://wa.me/258828436590" class="btn btn-primary full-width" target="_blank" data-i18n="btn_choose">Aderir ao Plano</a>
+                        <a href="https://wa.me/258828436590" class="btn btn-primary full-width" target="_blank" data-i18n="btn_choose" aria-label="Aderir ao Plano Prime - Contactar pelo WhatsApp">Aderir ao Plano</a>
                     </div>
                 </div>
 
@@ -403,7 +405,7 @@
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <a href="https://wa.me/258828436590" class="btn btn-secondary full-width" target="_blank" data-i18n="btn_choose">Aderir ao Plano</a>
+                        <a href="https://wa.me/258828436590" class="btn btn-secondary full-width" target="_blank" data-i18n="btn_choose" aria-label="Aderir ao Plano Especial - Contactar pelo WhatsApp">Aderir ao Plano</a>
                     </div>
                 </div>
             </div>
@@ -454,7 +456,7 @@
                 <span class="section-tag-light" data-i18n="community_tag">Espírito de Equipa</span>
                 <h2 class="community-heading" data-i18n="community_title">CRESCEMOS JUNTOS</h2>
                 <p class="community-desc" data-i18n="community_body">No Vieira's Gym, a força reside na união. Não treinamos para competir uns com os outros, mas para elevar o espírito de todos. Aqui, o ego fica à porta. Apoiamos-nos mutuamente em cada soco, em cada agachamento, em cada exame de graduação e em cada treino finalizado. Esta não é apenas uma academia. É a sua comunidade.</p>
-                <a href="https://wa.me/258828436590" class="btn btn-primary" target="_blank" data-i18n="btn_join_community">Fazer parte da Família</a>
+                <a href="https://wa.me/258828436590" class="btn btn-primary" target="_blank" data-i18n="btn_join_community" aria-label="Fazer parte da Família - WhatsApp">Fazer parte da Família</a>
             </div>
         </div>
     </section>
@@ -490,8 +492,8 @@
                         <span data-i18n="loc_hours_sat">Sábado: 05:30 – 12:00</span>
                     </p>
                     <div class="map-card-actions">
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=-25.9573143,32.5834931" class="btn btn-secondary btn-small" target="_blank" data-i18n="btn_directions">Direções</a>
-                        <a href="https://wa.me/258828436590" class="btn btn-primary btn-small" target="_blank" data-i18n="btn_talk">Falar Connosco</a>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=-25.9573143,32.5834931" class="btn btn-secondary btn-small" target="_blank" data-i18n="btn_directions" aria-label="Obter direções para a filial de Maputo no Google Maps">Direções</a>
+                        <a href="https://wa.me/258828436590" class="btn btn-primary btn-small" target="_blank" data-i18n="btn_talk" aria-label="Contactar a filial de Maputo pelo WhatsApp">Falar Connosco</a>
                     </div>
                 </div>
             </div>
@@ -520,8 +522,8 @@
                         <span data-i18n="loc_hours_sat">Sábado: 05:30 – 12:00</span>
                     </p>
                     <div class="map-card-actions">
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=-25.9293407,32.4535015" class="btn btn-secondary btn-small" target="_blank" data-i18n="btn_directions">Direções</a>
-                        <a href="https://wa.me/258828436590" class="btn btn-primary btn-small" target="_blank" data-i18n="btn_talk">Falar Connosco</a>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=-25.9293407,32.4535015" class="btn btn-secondary btn-small" target="_blank" data-i18n="btn_directions" aria-label="Obter direções para a filial de Matola no Google Maps">Direções</a>
+                        <a href="https://wa.me/258828436590" class="btn btn-primary btn-small" target="_blank" data-i18n="btn_talk" aria-label="Contactar a filial de Matola pelo WhatsApp">Falar Connosco</a>
                     </div>
                 </div>
             </div>
@@ -529,7 +531,7 @@
         
         <!-- General direct contact links (Email and contacts) -->
         <div class="container location-contacts-bottom text-center">
-            <p>WhatsApp: <a href="https://wa.me/258828436590" target="_blank" class="contact-link">+258 82 843 6590 / +258 84 520 3047</a> | Email: <a href="mailto:vieirasgym2012@gmail.com" class="contact-link">vieirasgym2012@gmail.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/258828436590" target="_blank" class="contact-link" aria-label="Contactar o Vieira's Gym pelo WhatsApp">+258 82 843 6590 / +258 84 520 3047</a> | Email: <a href="mailto:vieirasgym2012@gmail.com" class="contact-link" aria-label="Enviar email para o Vieira's Gym">vieirasgym2012@gmail.com</a></p>
         </div>
     </section>
 
@@ -539,7 +541,7 @@
         <div class="container text-center cta-content-wrapper">
             <h2 class="final-cta-title" data-i18n="final_cta_title">COMECE A MUDAR HOJE</h2>
             <p class="final-cta-subtitle" data-i18n="final_cta_subtitle">Diga não às desculpas inventadas pela sua mente. Junte-se a nós e treine com acompanhamento profissional.</p>
-            <a href="https://wa.me/258828436590" class="btn btn-primary btn-large" target="_blank" data-i18n="btn_final_cta">COMEÇAR AGORA</a>
+            <a href="https://wa.me/258828436590" class="btn btn-primary btn-large" target="_blank" data-i18n="btn_final_cta" aria-label="Começar agora no Vieira's Gym - WhatsApp">COMEÇAR AGORA</a>
         </div>
     </section>
 
@@ -548,7 +550,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand-area">
-                    <img src="/logo/logo.png" alt="Vieira's Gym Logo" class="footer-logo" width="80" height="80" loading="lazy" decoding="async">
+                    <img src="/logo/logo.png" alt="Logótipo do Vieira's Gym" class="footer-logo" width="80" height="80" loading="lazy" decoding="async">
                     <p class="footer-slogan" data-i18n="footer_slogan">Displicina cria campeões. Sucesso é o resultado de pequenos esforços diários.</p>
                 </div>
                 <div class="footer-links">
@@ -563,8 +565,8 @@
                 <div class="footer-social">
                     <h4 data-i18n="footer_social_title">Redes Sociais</h4>
                     <ul>
-                        <li><a href="https://www.facebook.com/vieirasgym/" target="_blank">Facebook</a></li>
-                        <li><a href="https://www.instagram.com/vieiras_gym/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/vieirasgym/" target="_blank" aria-label="Abrir página do Vieira's Gym no Facebook">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/vieiras_gym/" target="_blank" aria-label="Abrir Instagram do Vieira's Gym">Instagram</a></li>
                     </ul>
                 </div>
             </div>

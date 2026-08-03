@@ -3042,3 +3042,35 @@ iframe {
   object-fit: cover !important;
   object-position: center !important;
 }
+
+/* Accessibility Tap Targets on Mobile */
+@media (max-width: 768px) {
+  button,
+  a,
+  .lang-btn,
+  .filter-btn,
+  .mobile-menu-toggle {
+    touch-action: manipulation;
+  }
+
+  .lang-btn {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .filter-btn {
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .mobile-menu-toggle {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+}
+
