@@ -60,7 +60,7 @@
                 <a href="https://wa.me/258828436590" class="btn btn-primary nav-cta" target="_blank" data-i18n="btn_trial" aria-label="Marcar aula experimental pelo WhatsApp">Aula Experimental</a>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
                     <span class="hamburger"></span>
                 </button>
             </div>
@@ -68,7 +68,7 @@
     </header>
 
     <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay">
+    <div id="mobile-menu" class="mobile-nav-overlay" aria-hidden="true">
         <nav class="mobile-nav">
             <ul>
                 <li><a href="#problem" data-i18n="nav_about">Sobre</a></li>
@@ -355,7 +355,7 @@
                 <div class="pricing-card">
                     <div class="card-header">
                         <h3 class="pricing-name" data-i18n="price_basic">Básico</h3>
-                        <div class="pricing-value">2.500<span class="currency">MT</span><span class="period">/mês</span></div>
+                        <div class="pricing-value"><span class="pricing-price-value">2.500</span><span class="currency">MT</span><span class="period">/mês</span></div>
                     </div>
                     <div class="card-features">
                         <ul>
@@ -375,7 +375,7 @@
                     <div class="recommended-badge" data-i18n="badge_recommended">Recomendado</div>
                     <div class="card-header">
                         <h3 class="pricing-name" data-i18n="price_prime">Prime</h3>
-                        <div class="pricing-value">4.000<span class="currency">MT</span><span class="period">/mês</span></div>
+                        <div class="pricing-value"><span class="pricing-price-value">4.000</span><span class="currency">MT</span><span class="period">/mês</span></div>
                     </div>
                     <div class="card-features">
                         <ul>
@@ -395,7 +395,7 @@
                 <div class="pricing-card">
                     <div class="card-header">
                         <h3 class="pricing-name" data-i18n="price_special">Especial</h3>
-                        <div class="pricing-value">3.000<span class="currency">MT</span><span class="period">/mês</span></div>
+                        <div class="pricing-value"><span class="pricing-price-value">3.000</span><span class="currency">MT</span><span class="period">/mês</span></div>
                     </div>
                     <div class="card-features">
                         <ul>

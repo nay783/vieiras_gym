@@ -3073,3 +3073,277 @@ iframe {
   }
 }
 
+/* Final Mobile Layout Fixes Only (max-width: 768px) */
+@media (max-width: 768px) {
+  /* 1. Header Layout Row Alignment */
+  .header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: var(--header-height, 72px) !important;
+    padding-inline: 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .logo-area {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    min-width: 0 !important;
+  }
+
+  .brand-name {
+    font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+
+  .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+
+  .lang-switcher {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+  }
+
+  .mobile-menu-toggle {
+    display: flex !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* 2. Rebuilt Mobile Menu presentation */
+  .mobile-nav-overlay {
+    position: fixed !important;
+    top: var(--header-height, 72px) !important;
+    right: -100% !important;
+    width: 100% !important;
+    height: calc(100svh - var(--header-height, 72px)) !important;
+    background: #050505 !important;
+    z-index: 999 !important;
+    padding: 0 !important;
+    transition: var(--transition-smooth) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .mobile-nav-overlay.open {
+    right: 0 !important;
+  }
+
+  .mobile-nav {
+    width: 100% !important;
+    min-height: 100% !important;
+    padding: 2rem 1.5rem 3rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-nav ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: grid !important;
+    gap: 0 !important;
+  }
+
+  .mobile-nav a {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 64px !important;
+    padding: 0.75rem 0 !important;
+    font-size: clamp(1.6rem, 8vw, 2.4rem) !important;
+    line-height: 1.05 !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    font-family: var(--font-heading) !important;
+    font-weight: 800 !important;
+    color: var(--color-text-white) !important;
+  }
+
+  .mobile-nav-footer {
+    width: 100% !important;
+    margin-top: 2rem !important;
+    padding-top: 0 !important;
+  }
+
+  .mobile-nav-footer .btn {
+    width: 100% !important;
+    min-height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  /* 3. Mobile Pricing Cards Stacked Layout */
+  .pricing-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+
+  .pricing-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 2rem 1.5rem !important;
+    overflow: visible !important;
+  }
+
+  .pricing-card.recommended {
+    margin-top: 1rem !important;
+  }
+
+  .recommended-badge {
+    position: absolute !important;
+    top: -1px !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    white-space: nowrap !important;
+    max-width: calc(100% - 2rem) !important;
+  }
+
+  .pricing-value {
+    display: flex !important;
+    align-items: baseline !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+  }
+
+  .pricing-price-value {
+    font-size: clamp(3rem, 15vw, 4.5rem) !important;
+    line-height: 0.95 !important;
+    font-weight: 900 !important;
+    font-family: var(--font-heading) !important;
+  }
+
+  .pricing-card .card-footer .btn {
+    width: 100% !important;
+    min-height: 56px !important;
+  }
+
+  .pricing-name {
+    margin-bottom: 1.25rem !important;
+  }
+
+  .card-header {
+    margin-bottom: 2rem !important;
+  }
+
+  .card-features {
+    margin-bottom: 2rem !important;
+  }
+
+  /* 4. Mobile Location Cards Stacked Layout */
+  .location-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .map-card-new {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .map-frame-wrapper {
+    width: 100% !important;
+    aspect-ratio: 4 / 3 !important;
+    height: auto !important;
+  }
+
+  .map-frame {
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+    display: block !important;
+  }
+
+  .map-card-info {
+    padding: 1.5rem !important;
+  }
+
+  .map-card-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+
+  .map-card-actions a.btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 54px !important;
+    padding: 0.9rem 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  /* Stack actions vertically with Falar Connosco first */
+  .map-card-actions a.btn-primary {
+    order: 1 !important;
+  }
+
+  .map-card-actions a.btn-secondary {
+    order: 2 !important;
+  }
+
+  /* 5. Mobile Container Safety */
+  .container {
+    width: calc(100% - 2rem) !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+  }
+
+  .memberships-section,
+  .location-section {
+    overflow-x: hidden !important;
+  }
+}
+
+/* 6. HTML/Body Overflow Safety globally */
+html,
+body {
+  overflow-x: hidden !important;
+}
+
+/* 7. Small Mobile Adjustments (max-width: 380px) */
+@media (max-width: 380px) {
+  .mobile-nav,
+  .map-card-info,
+  .pricing-card {
+    padding-inline: 1.1rem !important;
+  }
+
+  .mobile-nav a {
+    font-size: 1.7rem !important;
+  }
+
+  .pricing-price-value {
+    font-size: 3rem !important;
+  }
+}
+

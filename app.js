@@ -680,6 +680,8 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.classList.toggle('open', targetState);
             mobileOverlay.classList.toggle('open', targetState);
             menuToggle.setAttribute('aria-expanded', targetState ? 'true' : 'false');
+            menuToggle.setAttribute('aria-label', targetState ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+            mobileOverlay.setAttribute('aria-hidden', targetState ? 'false' : 'true');
             document.body.style.overflow = targetState ? 'hidden' : '';
         });
 
@@ -688,11 +690,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuToggle.classList.remove('open');
                 mobileOverlay.classList.remove('open');
                 menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menu de navegação');
+                mobileOverlay.setAttribute('aria-hidden', 'true');
                 document.body.style.overflow = '';
             });
         });
     }
-
 
     /* ==========================================================================
        3. TIMETABLE FILTER LOGIC (DYNAMIC RENDERING)
