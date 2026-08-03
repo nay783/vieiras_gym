@@ -951,7 +951,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         verticalReels.forEach((reel) => {
             const card = document.createElement('article');
-            card.className = 'vertical-reel-card';
+            card.className = 'vertical-reel-card media-frame';
             card.setAttribute('key', reel.src);
 
             const video = document.createElement('video');
@@ -974,7 +974,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         horizontalReels.forEach((reel) => {
             const card = document.createElement('article');
-            card.className = 'horizontal-reel-card';
+            card.className = 'horizontal-reel-card media-frame';
             card.setAttribute('key', reel.src);
 
             const video = document.createElement('video');
@@ -994,6 +994,12 @@ document.addEventListener('DOMContentLoaded', () => {
             card.appendChild(video);
             hTrack.appendChild(card);
         });
+
+        // Initialize media frames loader on dynamic reels
+        if (typeof initMediaFrames === 'function') {
+            initMediaFrames(vTrack);
+            initMediaFrames(hTrack);
+        }
 
         const vShell = vTrack.closest('.media-carousel-shell');
         if (vShell) vShell.style.display = verticalReels.length === 0 ? 'none' : '';
@@ -1213,16 +1219,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Global Media Error Handling - Cleanly remove broken media items
+    // Global Media Error Handling - Apply has-error to media-frame wrappers
     window.addEventListener('error', (e) => {
-        if (e.target && e.target.tagName === 'IMG') {
-            const img = e.target;
-            console.error("Failed media:", img.src);
-            const wrapper = img.closest('.gallery-item') || img.closest('.collage-item') || img.closest('.programme-card') || img.closest('.founder-portrait-container') || img.closest('[data-media-item]');
-            if (wrapper) {
-                wrapper.remove();
+        if (e.target && (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO')) {
+            const media = e.target;
+            console.error("Failed media:", media.currentSrc || media.src);
+            const frame = media.closest(".media-frame");
+            if (frame) {
+                frame.classList.add("has-error");
             } else {
-                img.style.display = 'none';
+                media.style.display = 'none';
             }
         }
     }, true);
@@ -1364,7 +1370,7 @@ document.addEventListener('DOMContentLoaded', () => {
         galleryContainer.innerHTML = '';
         socialProofImages.forEach((itemObj, index) => {
             const item = document.createElement('div');
-            item.className = 'gallery-item';
+            item.className = 'gallery-item media-frame';
             
             const img = document.createElement('img');
             img.src = itemObj.src;
@@ -1375,12 +1381,6 @@ document.addEventListener('DOMContentLoaded', () => {
             img.decoding = 'async';
             img.className = 'media-image';
             
-            // Fade-in effect on load
-            img.onload = () => img.classList.add('is-loaded');
-            if (img.complete) {
-                img.classList.add('is-loaded');
-            }
-            
             item.appendChild(img);
             
             item.addEventListener('click', () => {
@@ -1389,6 +1389,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             galleryContainer.appendChild(item);
         });
+
+        // Initialize media frames loader on dynamic gallery
+        if (typeof initMediaFrames === 'function') {
+            initMediaFrames(galleryContainer);
+        }
     }
 
     renderSocialProofGallery();
@@ -1404,45 +1409,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hero Video Autoplay & Loop Safeguards
     const heroVideo = document.querySelector('.hero-background-video');
-    if (heroVideo) {
+
+    async function ensureHeroPlayback() {
+        if (!heroVideo) return;
+
         heroVideo.muted = true;
-        
-        // When video is ready, add is-ready class to fade in opacity
-        heroVideo.addEventListener('canplay', () => {
-            heroVideo.classList.add('is-ready');
-        });
-        
-        // If the browser already has the video loaded (or cached)
-        if (heroVideo.readyState >= 3) {
-            heroVideo.classList.add('is-ready');
+        heroVideo.defaultMuted = true;
+        heroVideo.playsInline = true;
+        heroVideo.loop = true;
+        heroVideo.playbackRate = 1;
+
+        try {
+            await heroVideo.play();
+        } catch (error) {
+            console.warn("Hero autoplay temporarily blocked:", error);
         }
+    }
 
-        heroVideo.play().catch(err => {
-            console.warn("Hero autoplay failed or was delayed:", err);
-        });
+    if (heroVideo) {
+        heroVideo.addEventListener('loadeddata', ensureHeroPlayback);
+        heroVideo.addEventListener('canplay', ensureHeroPlayback);
 
-        // Fail-safe loop restart
         heroVideo.addEventListener('ended', () => {
             heroVideo.currentTime = 0;
-            heroVideo.play().catch(() => {});
+            ensureHeroPlayback();
+        });
+
+        heroVideo.addEventListener('pause', () => {
+            if (!document.hidden) {
+                window.setTimeout(ensureHeroPlayback, 150);
+            }
+        });
+
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                ensureHeroPlayback();
+            }
+        });
+
+        window.addEventListener('pageshow', ensureHeroPlayback);
+
+        document.addEventListener('touchstart', ensureHeroPlayback, { once: true, passive: true });
+        
+        // Initial play attempt
+        ensureHeroPlayback();
+    }
+
+    // Media Frame visual loading placeholders
+    function initMediaFrames(root = document) {
+        root.querySelectorAll(".media-frame").forEach((frame) => {
+            const media = frame.querySelector("img, video");
+            if (!media) return;
+
+            const markLoaded = () => {
+                frame.classList.add("is-loaded");
+            };
+
+            const handleError = () => {
+                console.error("Failed media:", media.currentSrc || media.src);
+                frame.classList.add("has-error");
+            };
+
+            if (media.tagName === "IMG") {
+                if (media.complete && media.naturalWidth > 0) {
+                    markLoaded();
+                } else {
+                    media.addEventListener("load", markLoaded, { once: true });
+                    media.addEventListener("error", handleError, { once: true });
+                }
+            } else if (media.tagName === "VIDEO") {
+                if (media.readyState >= 2) {
+                    markLoaded();
+                } else {
+                    media.addEventListener("loadeddata", markLoaded, { once: true });
+                    media.addEventListener("error", handleError, { once: true });
+                }
+            }
         });
     }
 
-    // Image visual loading states fade-in
-    const handleImageLoad = (img) => {
-        img.classList.add('is-loaded');
-    };
-
-    document.querySelectorAll('img.media-image').forEach(img => {
-        if (img.complete) {
-            handleImageLoad(img);
-        } else {
-            img.addEventListener('load', () => handleImageLoad(img));
-            if (typeof img.decode === 'function') {
-                img.decode().then(() => handleImageLoad(img)).catch(() => {});
-            }
-        }
-    });
+    // Initialize all media frames on page load
+    window.initMediaFrames = initMediaFrames; // Expose helper globally just in case
+    initMediaFrames();
 
     // Intersection Observer for below-the-fold videos
     if ('IntersectionObserver' in window) {
@@ -1457,8 +1505,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('video').forEach(video => {
-            if (video.classList.contains('hero-background-video')) return;
+        document.querySelectorAll("video:not(.hero-background-video)").forEach(video => {
             videoObserver.observe(video);
         });
     }
