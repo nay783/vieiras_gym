@@ -1241,37 +1241,37 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
 
     const socialProofImages = [
-        { src: '/posts/kb/img-20260218-wa0015.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260218-wa0018.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260224-wa0005.webp', w: 1280, h: 960 },
-        { src: '/posts/kb/img-20260225-wa0000.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260305-wa0004.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260314-wa0045.webp', w: 1600, h: 1017 },
-        { src: '/posts/kb/img-20260330-wa0011.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260413-wa0004.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260414-wa0002.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260420-wa0007.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260420-wa0008.webp', w: 900, h: 1600 },
-        { src: '/posts/kb/img-20260427-wa0013.webp', w: 1600, h: 920 },
-        { src: '/posts/kb/img-20260504-wa0002.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260506-wa0007.webp', w: 1280, h: 960 },
-        { src: '/posts/kb/img-20260520-wa0109.webp', w: 1280, h: 960 },
-        { src: '/posts/kb/img-20260522-wa0000.webp', w: 1200, h: 1600 },
-        { src: '/posts/kb/img-20260623-wa0002.webp', w: 960, h: 1280 },
-        { src: '/posts/kb/img-20260623-wa0006.webp', w: 1200, h: 1600 },
-        { src: '/posts/kb/img-20260624-wa0005.webp', w: 1280, h: 960 },
-        { src: '/posts/kb/img-20260624-wa0007.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260701-wa0032-2.webp', w: 1600, h: 1050 },
-        { src: '/posts/kb/img-20260721-wa0007.webp', w: 1600, h: 1470 },
-        { src: '/posts/kb/img-20260729-wa0001.webp', w: 940, h: 1280 }
+        { src: '/posts/kb/img-20260218-wa0015.webp', w: 1600, h: 1200, alt: "Graduação de cintos e conselho técnico no Vieira's Gym" },
+        { src: '/posts/kb/img-20260218-wa0018.webp', w: 1600, h: 1200, alt: "Treino de grupo com atletas em pose de prontidão no tatame" },
+        { src: '/posts/kb/img-20260224-wa0005.webp', w: 1280, h: 960, alt: "Treino de kickboxing e sparring entre atletas masculinos e femininos" },
+        { src: '/posts/kb/img-20260225-wa0000.webp', w: 1600, h: 1200, alt: "Atletas a treinar posições de autodefesa com foco técnico" },
+        { src: '/posts/kb/img-20260305-wa0004.webp', w: 1600, h: 1200, alt: "Treino de flexibilidade e pontapés altos no taekwondo" },
+        { src: '/posts/kb/img-20260314-wa0045.webp', w: 1600, h: 1017, alt: "Exposição de técnicas de pontapés laterais com alvos" },
+        { src: '/posts/kb/img-20260330-wa0011.webp', w: 1600, h: 1200, alt: "Atletas alinhados para demonstração de exame de graduação" },
+        { src: '/posts/kb/img-20260413-wa0004.webp', w: 1600, h: 1200, alt: "Cerimónia de graduação com entrega de novos cintos a atletas" },
+        { src: '/posts/kb/img-20260414-wa0002.webp', w: 1600, h: 1200, alt: "Fotografia coletiva da equipa de atletas no tatame" },
+        { src: '/posts/kb/img-20260420-wa0007.webp', w: 1600, h: 1200, alt: "Atletas juniores a praticar técnicas básicas de defesa pessoal" },
+        { src: '/posts/kb/img-20260420-wa0008.webp', w: 900, h: 1600, alt: "Pontapé de rotação executado com precisão e técnica vertical" },
+        { src: '/posts/kb/img-20260427-wa0013.webp', w: 1600, h: 920, alt: "Equipa técnica e instrutores de artes marciais no tatame" },
+        { src: '/posts/kb/img-20260504-wa0002.webp', w: 1600, h: 1200, alt: "Treino intensivo de preparação física e cardio no tatame" },
+        { src: '/posts/kb/img-20260506-wa0007.webp', w: 1280, h: 960, alt: "Instrução de técnicas de defesa e esquiva em combate de boxe" },
+        { src: '/posts/kb/img-20260520-wa0109.webp', w: 1280, h: 960, alt: "Atletas em pose de respeito marcial no início do treino" },
+        { src: '/posts/kb/img-20260522-wa0000.webp', w: 1200, h: 1600, alt: "Treino de pontapés em saco de pancada pesado" },
+        { src: '/posts/kb/img-20260623-wa0002.webp', w: 960, h: 1280, alt: "Preparação de combate e colocação de ligaduras nas mãos" },
+        { src: '/posts/kb/img-20260623-wa0006.webp', w: 1200, h: 1600, alt: "Salto e técnicas de pontapé aéreo no taekwondo" },
+        { src: '/posts/kb/img-20260624-wa0005.webp', w: 1280, h: 960, alt: "Treino de manoplas e combinações rápidas de kickboxing" },
+        { src: '/posts/kb/img-20260624-wa0007.webp', w: 1600, h: 1200, alt: "Família Vieira's Gym unida após uma sessão exigente de treinos" },
+        { src: '/posts/kb/img-20260701-wa0032-2.webp', w: 1600, h: 1050, alt: "Atletas juniores a demonstrar técnicas de pontapé controlado" },
+        { src: '/posts/kb/img-20260721-wa0007.webp', w: 1600, h: 1470, alt: "Reunião de graduação e celebração das conquistas dos atletas" },
+        { src: '/posts/kb/img-20260729-wa0001.webp', w: 940, h: 1280, alt: "Foco mental e aquecimento pré-combate" }
     ];
 
     const communityCollageImages = [
-        { src: '/posts/kb/img-20260218-wa0018.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260330-wa0011.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260413-wa0004.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260414-wa0002.webp', w: 1600, h: 1200 },
-        { src: '/posts/kb/img-20260624-wa0007.webp', w: 1600, h: 1200 }
+        { src: '/posts/kb/img-20260218-wa0018.webp', w: 1600, h: 1200, alt: "Treino de grupo com atletas em pose de prontidão no tatame" },
+        { src: '/posts/kb/img-20260330-wa0011.webp', w: 1600, h: 1200, alt: "Atletas alinhados para demonstração de exame de graduação" },
+        { src: '/posts/kb/img-20260413-wa0004.webp', w: 1600, h: 1200, alt: "Cerimónia de graduação com entrega de novos cintos a atletas" },
+        { src: '/posts/kb/img-20260414-wa0002.webp', w: 1600, h: 1200, alt: "Fotografia coletiva da equipa de atletas no tatame" },
+        { src: '/posts/kb/img-20260624-wa0007.webp', w: 1600, h: 1200, alt: "Família Vieira's Gym unida após uma sessão exigente de treinos" }
     ];
 
     let lightboxActiveImages = [];
@@ -1305,6 +1305,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentItem = lightboxActiveImages[lightboxCurrentIndex];
         if (currentItem) {
             lightboxImg.src = typeof currentItem === 'string' ? currentItem : currentItem.src;
+            lightboxImg.alt = (typeof currentItem === 'object' && currentItem.alt) ? currentItem.alt : 'Visualização em tamanho real';
         }
     }
 
@@ -1379,7 +1380,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img.src = itemObj.src;
             img.width = itemObj.w;
             img.height = itemObj.h;
-            img.alt = `Atletas e treino no Vieira's Gym`;
+            img.alt = itemObj.alt || `Atletas e treino no Vieira's Gym`;
             img.loading = 'lazy';
             img.decoding = 'async';
             img.className = 'media-image';
@@ -1413,7 +1414,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hero Video Autoplay & Loop Safeguards
     const heroVideo = document.querySelector('.hero-background-video');
 
-    async function ensureHeroPlayback() {
+    async function startHeroVideo() {
         if (!heroVideo) return;
 
         heroVideo.muted = true;
@@ -1425,37 +1426,30 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             await heroVideo.play();
         } catch (error) {
-            console.warn("Hero autoplay temporarily blocked:", error);
+            console.warn("Hero video autoplay blocked:", error);
         }
     }
 
     if (heroVideo) {
-        heroVideo.addEventListener('loadeddata', ensureHeroPlayback);
-        heroVideo.addEventListener('canplay', ensureHeroPlayback);
+        if (heroVideo.readyState >= 2) {
+            startHeroVideo();
+        }
+
+        heroVideo.addEventListener('loadeddata', startHeroVideo, { once: true });
+        heroVideo.addEventListener('canplay', startHeroVideo, { once: true });
 
         heroVideo.addEventListener('ended', () => {
             heroVideo.currentTime = 0;
-            ensureHeroPlayback();
-        });
-
-        heroVideo.addEventListener('pause', () => {
-            if (!document.hidden) {
-                window.setTimeout(ensureHeroPlayback, 150);
-            }
+            startHeroVideo();
         });
 
         document.addEventListener('visibilitychange', () => {
             if (!document.hidden) {
-                ensureHeroPlayback();
+                startHeroVideo();
             }
         });
 
-        window.addEventListener('pageshow', ensureHeroPlayback);
-
-        document.addEventListener('touchstart', ensureHeroPlayback, { once: true, passive: true });
-        
-        // Initial play attempt
-        ensureHeroPlayback();
+        window.addEventListener('pageshow', startHeroVideo);
     }
 
     // Media Frame visual loading placeholders
