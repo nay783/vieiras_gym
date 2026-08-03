@@ -18,3 +18,10 @@ desktop.ini
 **/*.prproj
 **/*.prin
 **/*.prtl
+
+# Root-level duplicate media folders (served from /public)
+/POSTS/
+/images/
+/reels/
+/LOGO/
+

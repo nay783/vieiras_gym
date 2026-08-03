@@ -1,0 +1,46 @@
+{
+  "rewrites": [
+    { "source": "/posts/(.*)", "destination": "/public/posts/$1" },
+    { "source": "/images/(.*)", "destination": "/public/images/$1" },
+    { "source": "/reels/(.*)", "destination": "/public/reels/$1" },
+    { "source": "/logo/(.*)", "destination": "/public/logo/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/posts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/reels/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/logo/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

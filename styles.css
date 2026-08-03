@@ -2935,3 +2935,67 @@ iframe {
   font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   line-height: 1.65;
 }
+
+/* Media visual loading states and fade-in transitions */
+.media-image {
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.media-image.is-loaded {
+  opacity: 1;
+}
+
+/* Shimmer placeholder effect */
+.gallery-item,
+.collage-item,
+.programme-image-wrapper,
+.founder-portrait-container,
+.accordion-visual {
+  background: #111;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item::before,
+.collage-item::before,
+.programme-image-wrapper::before,
+.founder-portrait-container::before,
+.accordion-visual::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.5s infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* When image is loaded, hide the shimmer */
+.gallery-item:has(img.is-loaded)::before,
+.collage-item:has(img.is-loaded)::before,
+.programme-image-wrapper:has(img.is-loaded)::before,
+.founder-portrait-container:has(img.is-loaded)::before,
+.accordion-visual:has(img.is-loaded)::before {
+  display: none;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

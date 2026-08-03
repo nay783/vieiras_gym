@@ -900,7 +900,6 @@ document.addEventListener('DOMContentLoaded', () => {
         '/reels/AQOAzjxP396f1pOYhed_S5IVDOh_fb3XIeU4fynIvM5BMXXMIAvR39ons-k5qm7yOD3lG5zWE2Zyf5cWnqAm3pVT.mp4',
         '/reels/AQOBf3kDpqp2RrgSznzxoW8HpGoEVQFX5zDrYpFX40zUfJXZ1D8-isoncq7hTGBwoF8M9ixMCKff9ripW5XnvaD5bjqRZ4r6YNDH6Gk.mp4',
         '/reels/AQOebTGfHGTVE2bQq3If4D3PFdDYrlLGm65B3jlCMQZBqQS4wMeofhW5o9_stjfNWtFqfhovr0hfBktpPO2zVpnD0eBdAAtjawHJo6o.mp4',
-        '/reels/AQPKup0Vn8jx6p25rOYWSUO4jXR9RsWeE_AqJujXRHJyYd6lGr1uQfHIqnBhw8J3nUWXrL1HfRXx0djhsVY34gW1.mp4',
         '/reels/AQPLEyibwlgGZzDBmjZZo_RnUxIyoTLcKYRC1qQC91GFl4bR5mtZR0iohxtqjwqOE0aEZjNDEvWTmouppnClfhDxv7zxVtxKMLWzMKE.mp4',
         '/reels/DISCIPLINE.mp4'
     ];
@@ -1233,37 +1232,37 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
 
     const socialProofImages = [
-        '/posts/kb/IMG-20260218-WA0015.jpg',
-        '/posts/kb/IMG-20260218-WA0018.jpg',
-        '/posts/kb/IMG-20260224-WA0005.jpg',
-        '/posts/kb/IMG-20260225-WA0000.jpg',
-        '/posts/kb/IMG-20260305-WA0004.jpg',
-        '/posts/kb/IMG-20260314-WA0045.jpg',
-        '/posts/kb/IMG-20260330-WA0011.jpg',
-        '/posts/kb/IMG-20260413-WA0004.jpg',
-        '/posts/kb/IMG-20260414-WA0002.jpg',
-        '/posts/kb/IMG-20260420-WA0007.jpg',
-        '/posts/kb/IMG-20260420-WA0008.jpg',
-        '/posts/kb/IMG-20260427-WA0013.jpg',
-        '/posts/kb/IMG-20260504-WA0002.jpg',
-        '/posts/kb/IMG-20260506-WA0007.jpg',
-        '/posts/kb/IMG-20260520-WA0109.jpg',
-        '/posts/kb/IMG-20260522-WA0000.jpg',
-        '/posts/kb/IMG-20260623-WA0002.jpg',
-        '/posts/kb/IMG-20260623-WA0006.jpg',
-        '/posts/kb/IMG-20260624-WA0005.jpg',
-        '/posts/kb/IMG-20260624-WA0007.jpg',
-        '/posts/kb/IMG-20260701-WA0032(2).jpg',
-        '/posts/kb/IMG-20260721-WA0007.jpg',
-        '/posts/kb/IMG-20260729-WA0001.jpg'
+        { src: '/posts/kb/img-20260218-wa0015.webp', w: 1600, h: 1200 },
+        { src: '/posts/kb/img-20260218-wa0018.webp', w: 4032, h: 3024 },
+        { src: '/posts/kb/img-20260224-wa0005.webp', w: 1280, h: 960 },
+        { src: '/posts/kb/img-20260225-wa0000.webp', w: 1600, h: 1200 },
+        { src: '/posts/kb/img-20260305-wa0004.webp', w: 2972, h: 2229 },
+        { src: '/posts/kb/img-20260314-wa0045.webp', w: 1600, h: 1017 },
+        { src: '/posts/kb/img-20260330-wa0011.webp', w: 4160, h: 3120 },
+        { src: '/posts/kb/img-20260413-wa0004.webp', w: 4032, h: 3024 },
+        { src: '/posts/kb/img-20260414-wa0002.webp', w: 4032, h: 3024 },
+        { src: '/posts/kb/img-20260420-wa0007.webp', w: 1600, h: 1200 },
+        { src: '/posts/kb/img-20260420-wa0008.webp', w: 900, h: 1600 },
+        { src: '/posts/kb/img-20260427-wa0013.webp', w: 1600, h: 920 },
+        { src: '/posts/kb/img-20260504-wa0002.webp', w: 1600, h: 1200 },
+        { src: '/posts/kb/img-20260506-wa0007.webp', w: 1280, h: 960 },
+        { src: '/posts/kb/img-20260520-wa0109.webp', w: 1280, h: 960 },
+        { src: '/posts/kb/img-20260522-wa0000.webp', w: 1200, h: 1600 },
+        { src: '/posts/kb/img-20260623-wa0002.webp', w: 960, h: 1280 },
+        { src: '/posts/kb/img-20260623-wa0006.webp', w: 3120, h: 4160 },
+        { src: '/posts/kb/img-20260624-wa0005.webp', w: 1280, h: 960 },
+        { src: '/posts/kb/img-20260624-wa0007.webp', w: 3720, h: 2790 },
+        { src: '/posts/kb/img-20260701-wa0032-2.webp', w: 1600, h: 1050 },
+        { src: '/posts/kb/img-20260721-wa0007.webp', w: 1600, h: 1470 },
+        { src: '/posts/kb/img-20260729-wa0001.webp', w: 940, h: 1280 }
     ];
 
     const communityCollageImages = [
-        '/posts/kb/IMG-20260218-WA0018.jpg',
-        '/posts/kb/IMG-20260330-WA0011.jpg',
-        '/posts/kb/IMG-20260413-WA0004.jpg',
-        '/posts/kb/IMG-20260414-WA0002.jpg',
-        '/posts/kb/IMG-20260624-WA0007.jpg'
+        { src: '/posts/kb/img-20260218-wa0018.webp', w: 4032, h: 3024 },
+        { src: '/posts/kb/img-20260330-wa0011.webp', w: 4160, h: 3120 },
+        { src: '/posts/kb/img-20260413-wa0004.webp', w: 4032, h: 3024 },
+        { src: '/posts/kb/img-20260414-wa0002.webp', w: 4032, h: 3024 },
+        { src: '/posts/kb/img-20260624-wa0007.webp', w: 3720, h: 2790 }
     ];
 
     let lightboxActiveImages = [];
@@ -1294,7 +1293,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateLightboxSource() {
         if (!lightboxImg) return;
-        lightboxImg.src = lightboxActiveImages[lightboxCurrentIndex];
+        const currentItem = lightboxActiveImages[lightboxCurrentIndex];
+        if (currentItem) {
+            lightboxImg.src = typeof currentItem === 'string' ? currentItem : currentItem.src;
+        }
     }
 
     function showLightboxNext() {
@@ -1360,14 +1362,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!galleryContainer) return;
 
         galleryContainer.innerHTML = '';
-        socialProofImages.forEach((src, index) => {
+        socialProofImages.forEach((itemObj, index) => {
             const item = document.createElement('div');
             item.className = 'gallery-item';
             
             const img = document.createElement('img');
-            img.src = src;
+            img.src = itemObj.src;
+            img.width = itemObj.w;
+            img.height = itemObj.h;
             img.alt = `Atletas e treino no Vieira's Gym`;
             img.loading = 'lazy';
+            img.decoding = 'async';
+            img.className = 'media-image';
+            
+            // Fade-in effect on load
+            img.onload = () => img.classList.add('is-loaded');
+            if (img.complete) {
+                img.classList.add('is-loaded');
+            }
             
             item.appendChild(img);
             
@@ -1413,6 +1425,41 @@ document.addEventListener('DOMContentLoaded', () => {
         heroVideo.addEventListener('ended', () => {
             heroVideo.currentTime = 0;
             heroVideo.play().catch(() => {});
+        });
+    }
+
+    // Image visual loading states fade-in
+    const handleImageLoad = (img) => {
+        img.classList.add('is-loaded');
+    };
+
+    document.querySelectorAll('img.media-image').forEach(img => {
+        if (img.complete) {
+            handleImageLoad(img);
+        } else {
+            img.addEventListener('load', () => handleImageLoad(img));
+            if (typeof img.decode === 'function') {
+                img.decode().then(() => handleImageLoad(img)).catch(() => {});
+            }
+        }
+    });
+
+    // Intersection Observer for below-the-fold videos
+    if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('video').forEach(video => {
+            if (video.classList.contains('hero-background-video')) return;
+            videoObserver.observe(video);
         });
     }
 
