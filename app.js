@@ -1280,95 +1280,100 @@ document.addEventListener('DOMContentLoaded', () => {
     let lightboxActiveImages = [];
     let lightboxCurrentIndex = 0;
 
-    const lightboxModal = document.getElementById('gallery-lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCloseBtn = document.querySelector('.lightbox-close');
-    const lightboxLeftArrow = document.querySelector('.lightbox-arrow-left');
-    const lightboxRightArrow = document.querySelector('.lightbox-arrow-right');
+    const lightbox = document.getElementById('social-lightbox');
+    const lightboxImage = lightbox?.querySelector('.social-lightbox-image');
+    const closeButton = lightbox?.querySelector('.social-lightbox-close');
+    const previousButton = lightbox?.querySelector('.social-lightbox-prev');
+    const nextButton = lightbox?.querySelector('.social-lightbox-next');
+    const counter = lightbox?.querySelector('.social-lightbox-counter');
+
+    function renderLightboxImage() {
+        if (!lightboxActiveImages.length || !lightboxImage) return;
+        const currentItem = lightboxActiveImages[lightboxCurrentIndex];
+        if (currentItem) {
+            lightboxImage.src = typeof currentItem === 'string' ? currentItem : currentItem.src;
+            lightboxImage.alt = (typeof currentItem === 'object' && currentItem.alt) ? currentItem.alt : 'Visualização em tamanho real';
+        }
+
+        if (counter) {
+            counter.textContent = `${lightboxCurrentIndex + 1} / ${lightboxActiveImages.length}`;
+        }
+    }
 
     function openSharedLightbox(imagesList, index) {
-        if (!lightboxModal || !lightboxImg) return;
+        if (!lightbox) return;
         lightboxActiveImages = imagesList;
         lightboxCurrentIndex = index;
-        updateLightboxSource();
-        lightboxModal.classList.add('active');
-        lightboxModal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
+        renderLightboxImage();
+
+        lightbox.hidden = false;
+        document.body.classList.add('lightbox-open');
+
+        closeButton?.focus();
     }
 
     function closeSharedLightbox() {
-        if (!lightboxModal) return;
-        lightboxModal.classList.remove('active');
-        lightboxModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    }
+        if (!lightbox) return;
+        lightbox.hidden = true;
+        document.body.classList.remove('lightbox-open');
 
-    function updateLightboxSource() {
-        if (!lightboxImg) return;
-        const currentItem = lightboxActiveImages[lightboxCurrentIndex];
-        if (currentItem) {
-            lightboxImg.src = typeof currentItem === 'string' ? currentItem : currentItem.src;
-            lightboxImg.alt = (typeof currentItem === 'object' && currentItem.alt) ? currentItem.alt : 'Visualização em tamanho real';
+        if (lightboxImage) {
+            lightboxImage.src = '';
         }
     }
 
     function showLightboxNext() {
         if (lightboxActiveImages.length === 0) return;
         lightboxCurrentIndex = (lightboxCurrentIndex + 1) % lightboxActiveImages.length;
-        updateLightboxSource();
+        renderLightboxImage();
     }
 
     function showLightboxPrev() {
         if (lightboxActiveImages.length === 0) return;
         lightboxCurrentIndex = (lightboxCurrentIndex - 1 + lightboxActiveImages.length) % lightboxActiveImages.length;
-        updateLightboxSource();
+        renderLightboxImage();
     }
 
-    if (lightboxCloseBtn) {
-        lightboxCloseBtn.addEventListener('click', closeSharedLightbox);
-    }
-    if (lightboxLeftArrow) {
-        lightboxLeftArrow.addEventListener('click', showLightboxPrev);
-    }
-    if (lightboxRightArrow) {
-        lightboxRightArrow.addEventListener('click', showLightboxNext);
-    }
-    if (lightboxModal) {
-        lightboxModal.addEventListener('click', (e) => {
-            if (e.target === lightboxModal || e.target.classList.contains('lightbox-content')) {
-                closeSharedLightbox();
-            }
-        });
-    }
+    closeButton?.addEventListener('click', closeSharedLightbox);
+    previousButton?.addEventListener('click', showLightboxPrev);
+    nextButton?.addEventListener('click', showLightboxNext);
 
-    document.addEventListener('keydown', (e) => {
-        if (!lightboxModal || !lightboxModal.classList.contains('active')) return;
-        if (e.key === 'Escape') {
+    lightbox?.addEventListener('click', (event) => {
+        if (event.target === lightbox || event.target.classList.contains('social-lightbox-stage')) {
             closeSharedLightbox();
-        } else if (e.key === 'ArrowRight') {
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (!lightbox || lightbox.hidden) return;
+
+        if (event.key === 'Escape') {
+            closeSharedLightbox();
+        } else if (event.key === 'ArrowRight') {
             showLightboxNext();
-        } else if (e.key === 'ArrowLeft') {
+        } else if (event.key === 'ArrowLeft') {
             showLightboxPrev();
         }
     });
 
     let touchStartX = 0;
     let touchEndX = 0;
-    if (lightboxModal) {
-        lightboxModal.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        
-        lightboxModal.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            const threshold = 50;
-            if (touchEndX < touchStartX - threshold) {
-                showLightboxNext();
-            } else if (touchEndX > touchStartX + threshold) {
-                showLightboxPrev();
-            }
-        }, { passive: true });
-    }
+
+    lightbox?.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox?.addEventListener('touchend', (event) => {
+        touchEndX = event.changedTouches[0].screenX;
+        const difference = touchEndX - touchStartX;
+        if (Math.abs(difference) < 50) return;
+
+        if (difference > 0) {
+            showLightboxPrev();
+        } else {
+            showLightboxNext();
+        }
+    }, { passive: true });
 
     function renderSocialProofGallery() {
         const galleryContainer = document.getElementById('social-proof-gallery');
