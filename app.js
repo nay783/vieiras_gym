@@ -1276,9 +1276,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: '/posts/kb/img-20260414-wa0002.webp', w: 1600, h: 1200, alt: "Fotografia coletiva da equipa de atletas no tatame" },
         { src: '/posts/kb/img-20260624-wa0007.webp', w: 1600, h: 1200, alt: "Família Vieira's Gym unida após uma sessão exigente de treinos" }
     ];
-
-    let lightboxActiveImages = [];
-    let lightboxCurrentIndex = 0;
+    let activeGallery = [];
+    let currentImageIndex = 0;
 
     const lightbox = document.getElementById('social-lightbox');
     const lightboxImage = lightbox?.querySelector('.social-lightbox-image');
@@ -1288,22 +1287,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const counter = lightbox?.querySelector('.social-lightbox-counter');
 
     function renderLightboxImage() {
-        if (!lightboxActiveImages.length || !lightboxImage) return;
-        const currentItem = lightboxActiveImages[lightboxCurrentIndex];
-        if (currentItem) {
-            lightboxImage.src = typeof currentItem === 'string' ? currentItem : currentItem.src;
-            lightboxImage.alt = (typeof currentItem === 'object' && currentItem.alt) ? currentItem.alt : 'Visualização em tamanho real';
+        if (!activeGallery.length || !lightboxImage) return;
+        const selectedImage = activeGallery[currentImageIndex];
+        if (selectedImage) {
+            lightboxImage.src = selectedImage.dataset.full || selectedImage.currentSrc || selectedImage.src;
+            lightboxImage.alt = selectedImage.alt || '';
         }
 
         if (counter) {
-            counter.textContent = `${lightboxCurrentIndex + 1} / ${lightboxActiveImages.length}`;
+            counter.textContent = `${currentImageIndex + 1} / ${activeGallery.length}`;
         }
     }
 
-    function openSharedLightbox(imagesList, index) {
-        if (!lightbox) return;
-        lightboxActiveImages = imagesList;
-        lightboxCurrentIndex = index;
+    function openGalleryLightbox(gallery, index) {
+        if (!lightbox || !gallery.length) return;
+        activeGallery = gallery;
+        currentImageIndex = index;
         renderLightboxImage();
 
         lightbox.hidden = false;
@@ -1323,14 +1322,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showLightboxNext() {
-        if (lightboxActiveImages.length === 0) return;
-        lightboxCurrentIndex = (lightboxCurrentIndex + 1) % lightboxActiveImages.length;
+        if (activeGallery.length === 0) return;
+        currentImageIndex = (currentImageIndex + 1) % activeGallery.length;
         renderLightboxImage();
     }
 
     function showLightboxPrev() {
-        if (lightboxActiveImages.length === 0) return;
-        lightboxCurrentIndex = (lightboxCurrentIndex - 1 + lightboxActiveImages.length) % lightboxActiveImages.length;
+        if (activeGallery.length === 0) return;
+        currentImageIndex = (currentImageIndex - 1 + activeGallery.length) % activeGallery.length;
         renderLightboxImage();
     }
 
@@ -1394,11 +1393,6 @@ document.addEventListener('DOMContentLoaded', () => {
             img.className = 'media-image';
             
             item.appendChild(img);
-            
-            item.addEventListener('click', () => {
-                openSharedLightbox(socialProofImages, index);
-            });
-            
             galleryContainer.appendChild(item);
         });
 
@@ -1408,14 +1402,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Populate dynamic social gallery
     renderSocialProofGallery();
 
-    document.querySelectorAll('.community-collage .collage-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const index = parseInt(item.getAttribute('data-index'), 10);
-            if (!isNaN(index)) {
-                openSharedLightbox(communityCollageImages, index);
-            }
+    // Group galleries registry and setup click listeners
+    const galleryGroups = {
+        socialProof: Array.from(document.querySelectorAll('.social-gallery img')),
+        teamSpirit: Array.from(document.querySelectorAll('.team-gallery img, .team-collage img'))
+    };
+
+    galleryGroups.socialProof.forEach((image, index) => {
+        image.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openGalleryLightbox(galleryGroups.socialProof, index);
+        });
+    });
+
+    galleryGroups.teamSpirit.forEach((image, index) => {
+        image.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openGalleryLightbox(galleryGroups.teamSpirit, index);
         });
     });
 

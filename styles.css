@@ -1336,6 +1336,10 @@ a {
   height: auto;
   object-fit: contain;
   object-position: center;
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  z-index: 2;
 }
 
 .social-lightbox-close {
@@ -3360,5 +3364,12 @@ body {
   .pricing-price-value {
     font-size: 3rem !important;
   }
+}
+
+/* Image Clickability cursors */
+.social-gallery img,
+.team-gallery img,
+.team-collage img {
+  cursor: zoom-in;
 }
 
